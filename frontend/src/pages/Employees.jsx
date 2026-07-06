@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/Searchbar';
 import EmployeeTable from '../components/EmployeeTable';
 
 function Employees() {
