@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Register from '../pages/Register';
 import Login from '../pages/Login';
+import Home from '../pages/Home';
 import Dashboard from '../pages/Dashboard';
 import ProtectedRoute from '../components/ProtectedRoute';
 import AddEmployee from '../pages/AddEmployee';
@@ -24,6 +25,10 @@ function AppRoutes(){
       />
 
       <Route 
+        path='/'
+        element={<Home />}
+      />
+      <Route
         path='/register'
         element={<Register />}
       />
