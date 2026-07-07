@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import API from "../services/api";
 import { useNavigate } from 'react-router-dom';
 
 function EditProfile() {
@@ -17,14 +17,11 @@ function EditProfile() {
 
             const token = localStorage.getItem('token');
 
-            const res = await axios.get(
-                'http://localhost:3000/api/auth/profile',
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
+            const res = await API.get("/api/auth/profile", {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-            );
+            });
 
             setProfile({
                 username: res.data.username,

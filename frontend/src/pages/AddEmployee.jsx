@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import axios from 'axios';
+import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 
 function AddEmployee() {
@@ -25,13 +25,10 @@ function AddEmployee() {
 
         const token = localStorage.getItem("token");
 
-        const res = await axios.post(
-            "http://localhost:3000/api/employees",
-            employee,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
+        const res = await API.post("/api/employees", employee, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
             }
         );
 

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import axios from "axios";
+import API from "../services/api";
 import { useParams } from "react-router-dom";
 
 function EmployeeDetails() {
@@ -15,13 +15,12 @@ function EmployeeDetails() {
         try {
             const token = localStorage.getItem('token');
 
-            const res = await axios.get(`http://localhost:3000/api/employees/${id}`,
-                {
-                    headers:{
-                        Authorization:`Bearer ${token}`
-                    }
+            const res = await API.get(`/api/employees/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-            );
+            });
+            
             setEmployee(res.data);
         } catch (error) {
             console.log(error);
