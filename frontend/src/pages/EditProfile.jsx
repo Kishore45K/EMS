@@ -46,8 +46,8 @@ function EditProfile() {
 
             const token = localStorage.getItem('token');
 
-            await axios.put(
-                'http://localhost:3000/api/auth/profile',
+            await API.put(
+                "/api/auth/profile",
                 profile,
                 {
                     headers: {
@@ -79,6 +79,7 @@ function EditProfile() {
                     name="username"
                     value={profile.username}
                     onChange={handleChange}
+                    placeholder="Enter Username"
                     className="w-full rounded-3xl border border-slate-300 bg-slate-50 px-5 py-3 text-sm text-slate-950 shadow-sm outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200"
                 />
 
@@ -86,6 +87,7 @@ function EditProfile() {
                     name="email"
                     value={profile.email}
                     onChange={handleChange}
+                    placeholder="Enter Email"
                     className="w-full rounded-3xl border border-slate-300 bg-slate-50 px-5 py-3 text-sm text-slate-950 shadow-sm outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200"
                 />
 

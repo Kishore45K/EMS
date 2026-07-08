@@ -24,7 +24,7 @@ function Login() {
 
         try {
 
-            const res = await API.post("/auth/login", data);
+            const res = await API.post("/api/auth/login", data);
 
             localStorage.setItem(
                 'token',

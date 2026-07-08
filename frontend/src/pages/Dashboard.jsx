@@ -39,21 +39,22 @@ function Dashboard() {
 
             const token = localStorage.getItem('token');
 
-            const res = await axios.get(
-                'http://localhost:3000/api/employees',
+            const res = await API.get(
+                "/api/employees",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
                 }
             );
+            console.log("API Response:", res.data);
+            console.log("Length:", res.data.length);
 
             setEmployees(res.data);
             setEmployeeCount(res.data.length);
 
         } catch (error) {
-
-            console.log(error);
+            console.log("Error fetching employees:", error);
         }
     };
 

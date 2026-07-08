@@ -26,7 +26,7 @@ function Register() {
 
         try {
 
-            await API.post("/auth/register", user);
+            await API.post("/api/auth/register", user);
 
             alert('User Registered Successfully');
 
